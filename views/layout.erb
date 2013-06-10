@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+  <head>  
+    <title><%= @title %>-虾米值得买-精品网购新鲜报</title>
+		<meta name="keywords" content="折扣, 降价, 促销, 海淘, 优惠券, 超值，优惠"/>
+		<meta name="description" content="虾米值得买 xmzdm.com 精品网购新鲜报"/>
+		<% client_browser = request.env["HTTP_USER_AGENT"] %>
+		<% if client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
+		<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
+		<link href="/css/style_mobile.css" rel="stylesheet" media="screen" type="text/css" />
+		<% else %>
+		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+		<link href="/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+		<% end %>
+	</head>  
+
+  <body>
+
+		<div id="main">
+<!--头部-->			
+	    <div id="top">
+				<div id="logo">
+					<a href="/" onfocus=this.blur();>
+						<div id="logo-img">
+							<img src="/images/logo.jpg" border="0" width="75px" height="75px">
+						</div>
+						<div id="logo-text">
+							虾米值得买
+						</div>
+						<div id="logo-text2">
+							精品网购新鲜报
+						</div>
+					</a>
+				</div>
+				<div id="nav">
+					<%= yield %>
+				</div>
+				<div id="search">
+					<div id="followme">
+						<iframe width="136" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=2659635301&style=2&btn=light&dpc=1"></iframe>
+					</div>
+					<form action="/search" method="get">
+						<input type="text" name="q">
+					  <input type="submit" value="搜索">
+					</form>
+				</div>
+			</div>
+<!--导航-->
+			<div id="sub-nav">
+				<div id="catlog">
+					按分类查看：
+					<a href="/catlog/1/服饰箱包">服饰箱包</a>&nbsp;&nbsp;
+					<a href="/catlog/2/美容护肤">美容护肤</a>&nbsp;&nbsp;
+					<a href="/catlog/3/数码家电">数码家电</a>&nbsp;&nbsp;						
+					<a href="/catlog/4/家居厨卫">家居厨卫</a>&nbsp;&nbsp;
+					<a href="/catlog/5/母婴用品">母婴用品</a>&nbsp;&nbsp;
+					<a href="/catlog/6/运动文体">运动文体</a>&nbsp;&nbsp;
+					<a href="/catlog/7/食品保健">食品保健</a>&nbsp;&nbsp;
+					<a href="/catlog/8/手表配饰">手表配饰</a>&nbsp;&nbsp;
+				</div>
+				<div id="sitelist">
+					按网站查看：
+					<a href="/site/coo8.com">库巴</a>&nbsp;&nbsp;
+					<a href="/site/ihush.com">俏物俏语</a>&nbsp;&nbsp;
+					<a href="/site/vancl">凡客诚品</a>&nbsp;&nbsp;						
+					<a href="/site/taobao.com">淘宝</a>&nbsp;&nbsp;
+					<a href="/site/tmall.com">天猫</a>&nbsp;&nbsp;
+					<a href="/site/360buy.com">京东</a>&nbsp;&nbsp;
+					<a href="/site/amazon.cn">亚马逊</a>&nbsp;&nbsp;
+					<a href="/site/dangdang.com">当当</a>&nbsp;&nbsp;
+					<a href="/site/newegg.com.cn">新蛋</a>&nbsp;&nbsp;
+					<a href="/site/yihaodian.com">1号店</a>&nbsp;&nbsp;
+					<a href="/site/51buy.com">易迅</a>&nbsp;&nbsp;
+					<a href="/site/suning.com">苏宁</a>&nbsp;&nbsp;
+					<a href="/site/gome.com.cn">国美</a>&nbsp;&nbsp;
+					<a href="/site/vjia.com">V+</a>&nbsp;&nbsp;
+				</div>
+			</div>	
+<!--内容区-->
+			<div id="content">
+
+				<% for deal in @deal %>
+
+					<% reg = /来自@淘点便宜货网 --详情请点击：|（来源网站：http:\/\/t\.cn\/[a-z0-9A-Z]*） @淘必得|(，|。|！|!|：|:|-)\s*[a-zA-z]+\:\/\/[^\s]*|[a-zA-z]+\:\/\/[^\s]*|#.*?#|\[.*?\]|\|.*|- 真的值得买，什么值得买，每日推荐网购优惠信息，海淘、海外购优惠促销值值值尽在“真的值得买”|促销详情:|来自: @什么值得买|来自: @值值值 - 详情请看:|来自@美国便宜货网|来自:@趣购365|\[更多优惠信息，请访问我们的论坛|更多国外优惠信息|\| 活动页面点此.*|购买链接在此|\.\.\s+（来源网站|商品介绍点击链接在此|详情请见|，优惠信息内详|更多优惠信息|，请访问我们的网站|更多优惠|更多信息|链接在此 - 详情请看：|\| 详情点此了解|点击查看>>>>|（购买页面）|【.{1,30}】|点击选购>>>>|>>>|购买点此|无返利点此|，购买点击|团购链接|，链接在此，|直接地址|，团购地址|团购地址|抢购点击|\[链接在此\]|猛击链接|直达电商连接|详情页面:|详情：|- 详情请看：|详情请看|详情|传送门|相关视频|视频页面:|@什么可以买：|非败不可|\|\| 每天优惠多|\| 每天优惠多|》\|\| 值不值得买 ？|》值不值得买？|》值不值得买 |》值不值得买|【趣购推荐】|【更新:得利网】|【得利网】|（分享自 @harlemyin）|\| CheapHuo\|易活|，到手.+元|（.*到手.+）|(，|,|。|！|!|：|:)$|　+/ %>
+<!--条目-->
+					<div class="deal-item">	
+
+	<!--左栏-->
+						<% unless params[:id] or client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
+						<div class="item-left">	
+							<div class="deal-img">
+									<%="<a href='/detail/#{deal.id}' target='_blank'><img src='#{deal.image_url}'></a>" %>
+							</div>
+						</div>
+						<% end %>
+	<!--右栏-->				
+						<% if params[:id]%>
+						<div class="item-right-detail">
+						<% else %>
+						<div class="item-right">
+						<% end %>	
+		<!--标题-->				
+							<% if params[:id]%>
+								<div class="deal-title-detail"><%= deal.title.gsub(reg, '') %>
+								</div>
+							<% else %>
+								<a href="/detail/<%= deal.id %>" target="_blank" style="text-decoration:none">
+									<div class="deal-title">
+										<img class="favicon"
+										<% if deal.blink=~ /51buy\.com/ %>
+										src="http://www.51buy.com/favicon.ico"
+										<% elsif deal.blink =~ /feibaibuke\.com/%>
+										src="/images/favicons.png"
+										<% else %> src="https://s2.googleusercontent.com/s2/favicons?domain_url=www<%= deal.blink.match(/\.\w+(\.com|\.cn|\.net)/).to_s %>"
+										onerror="javascript:this.src='/images/favicons.png'"
+										<% end %>
+										 max-height="16px" max-width="16px">&nbsp;
+										<%= deal.title.gsub(reg, '') %>
+									</div>
+								</a>
+							<% end %>
+		<!--标签-->					
+							<div class="deal-tag">
+								<%= (deal.time + 50400).strftime("%m月%d日 %H:%M") %> &nbsp;
+								由<a href="<%= deal.alink %>" target="_blank"><span style="color:#008000;"><%= deal.deal_site.name %></span></a>爆料	
+								&nbsp;<a href="/brand/<%= deal.brand %>" target="_blank"><span style="color:#0099ff;"><%= deal.brand if deal.brand != nil %></span></a>
+								&nbsp;<a href="/pname/<%= deal.pname %>"  target="_blank"><span style="color:#ff6600;"><%= deal.pname if deal.pname != nil %></span></a>
+								&nbsp;<a href="/model/<%= deal.model %>"  target="_blank"><span style="color:#666666;"><%= deal.model if deal.model != nil %></span></a>
+							</div>
+		<!--正文图片-->					
+							<% if params[:id] %>
+								<div class="deal-img-detail">
+									<%="<img src='#{deal.mimage_url||deal.image_url}'>" %>
+								</div>
+							<% elsif client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
+								<div class="deal-img">
+									<%="<img src='#{deal.image_url||deal.image_url}'>" %>
+								</div>
+							<% end %>
+		<!--价格-->				
+							<div class="deal-price">
+								<% if deal.country == 2 %>
+									<% str = (deal.price.delete("$").to_i*6.3.round + 53 ).to_s %>
+									<span><%="抢购价:"+ deal.price + "(到手约" + str + "元)" %></span>
+								<% else %>
+									<span><%= "抢购价:"+ deal.price if deal.price != nil %></span>
+								<% end %>
+							</div>
+		<!--描述-->						
+							<% if params[:id] %>
+								<div class="deal-desc">
+									<%= deal.description %>
+								</div>
+							<% end %>
+		<!--点击购买与分享-->					
+							<div class="deal-hit">
+								<a href= "<%= deal.blink %>" target='_blank'>
+									<div class="bbuttonr">立即抢购</div>
+								</a>
+								<a href="http://service.weibo.com/share/share.php?url=http://xmzdm.com/detail/<%= deal.id %>&appkey=3310821321&title=<%= deal.title.gsub(reg, '') %>&pic=<%= deal.mimage_url||deal.image_url %>" target="_blank"><img class="share-button" src="/images/transparent.gif">
+								</a>
+							</div>
+	<!--结束右栏-->						
+						</div>
+<!--结束条目-->						
+					</div>
+				<% end %>
+<!--分页-->
+				<div id="page">
+					<a href= "/page/1">1</a>&nbsp;&nbsp;
+					<a href= "/page/2">2</a>&nbsp;&nbsp;
+					<a href= "/page/3">3</a>&nbsp;&nbsp;
+					<a href= "/page/4">4</a>&nbsp;&nbsp;
+					<a href= "/page/5">5</a>&nbsp;&nbsp;
+				</div>
+<!--底部-->
+				<div id="copyright">
+					CopyRight 2012&nbsp;&nbsp;<a href="http://weibo.com/freemember007" target="_blank">虾米值得买</a>&nbsp;<a href="http://www.kuaidi100.com/all/sf.shtml" target="_blank">顺丰快递查询</a>
+				</div>
+
+<!--结束内容区-->			
+			</div>
+<!--统计-->		
+			<div style="display:none">
+			<script src="http://s22.cnzz.com/stat.php?id=4134929&web_id=4134929&show=pic2" language="JavaScript"></script>
+			</div>
+<!--结束main-->
+		</div>	
+	</body>
+
+</html>

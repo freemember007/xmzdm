@@ -1,0 +1,41 @@
+/*全局css*/
+html,body{height:100%;}
+body{background:#dddddd;color:#000000;font:normal 14px/1.2 helvetica,arial,sans-serif;margin:0;padding:0;-webkit-text-size-adjust: none;}
+div {wrap-work: break-word;word-break: break-all;}
+a{color:#003399;font-weight:bold;text-decoration:none;}
+a:focus{outline:none;}
+a:hover{text-decoration:underline;}
+img{border:0;}
+#main{background:#ffffff;margin-left:5px; margin-right: 5px;padding:5px 10px 5px 10px;}
+
+/*导航css*/
+#top{margin:0px 10px 5px 10px;height:75px;vertical-align:center;}
+#logo{float:left;}
+#logo-img{float:left;border:0;}
+#logo-text{float:left;display:none;}
+#logo-text2{float:left;display:none;}
+#nav{text-align:right;}
+#sitelist{display:none;}
+#catlog{display:none;}
+#followme{display:none}
+#search{text-align:right;margin-top:10px;}
+
+/*主体css*/
+#content{padding:5px;}
+.deal-item{border-top:1px dotted #AAAAAA;padding:5px;}
+.deal-title{color:#003399;font-size:20px;font-weight:bold;padding:10px 0 10px 0;}
+.deal-title-detail{font-size:20px;font-weight:bold;padding:10px 0 10px 0;}
+.deal-tag{padding:5px 0 5px 0;}
+.deal-img{padding:10px 0 10px 0;}
+.deal-price{font-size:20px;font-weight:bold;color:#cc0000;padding:5px 0 5px 0;}
+.deal-desc{line-height:20px;padding:10px 0 5px 0;}
+.deal-hit{padding:5px 0 5px 0;height:18px;}
+.bbuttonr{float:left;width:80px;height:22px;text-align:center;line-height:22px;font-weight:normal;font-size:12px;color:#ffffff;background-color:#BD362F;background-image:-moz-linear-gradient(center top , #EE5F5B, #BD362F);background-image:-webkit-linear-gradient(top, #EE5F5B, #BD362F);background-repeat:repeat-x;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);border-radius:4px;}
+.share-button{background:url(/images/share.gif) -32px -56px;vertical-align:bottom;height:18px;width:86px;border:0;float:right;}
+#page{padding:5px;text-align:center;vertical-align:bottom;}
+#page a{font-size:18px;font-weight:bold;}
+
+
+/*底部css*/
+#copyright{text-align:right;margin-top:5px;font-style:italic;font-weight:100;color:#999999;}
+#copyright a{font-weight:100;color:#999999;}

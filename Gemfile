@@ -1,0 +1,16 @@
+source 'http://rubygems.org/'
+
+gem 'sinatra'
+gem 'thread'
+gem 'sqlite3','1.3.7'
+gem 'activerecord','2.3.14'
+gem 'searchlogic', '2.5.12' # 注意它仅兼容activerecord<=2.3.14
+gem 'weibo2'
+gem 'nokogiri'
+gem 'json'
+gem 'rake'
+gem 'thin'
+gem 'rack-cache'
+gem 'sinatra-cache'
+gem 'rufus-scheduler'
+gem 'shotgun'
