@@ -37,9 +37,10 @@ helpers do
 end
 
 puts '加载路由与控制器'
-get '/api/feed' do
+get '/api/feed/:page' do
   deal = Deal.find(:all,
-  :limit => 30,
+  :limit => 10,
+  :offset => (params[:page].to_i-1)*10||0,
   :order => 'id DESC')
   deal.to_json
 end
