@@ -131,7 +131,7 @@
             @deal.price = "$" + [$1,$2,$3].compact[0]
             @deal.country = 2
           elsif title =~ /(\d+\.?\d*)元|￥(\d+\.?\d*)|价格(\d+\.?\d*)/
-            @deal.price = "￥" + [$1,$2,$3].compact[0]
+            @deal.price = "¥" + [$1,$2,$3].compact[0]
             @deal.country = 1
           end
         
