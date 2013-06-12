@@ -128,10 +128,10 @@
         
           # 取 价 格 与 币 种
           if title =~ /(\d+\.?\d*)美[刀元]|(\d+\.?\d*)刀|\$(\d+\.?\d*)/
-            @deal.price = "$" + [$1,$2,$3].compact.to_s
+            @deal.price = "$" + [$1,$2,$3].compact[0]
             @deal.country = 2
           elsif title =~ /(\d+\.?\d*)元|￥(\d+\.?\d*)|价格(\d+\.?\d*)/
-            @deal.price = "￥" + [$1,$2,$3].compact.to_s
+            @deal.price = "￥" + [$1,$2,$3].compact[0]
             @deal.country = 1
           end
         
