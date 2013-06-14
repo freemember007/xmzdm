@@ -36,6 +36,9 @@ helpers do
   end
 end
 
+################## API路由 ######################
+
+
 puts '加载路由与控制器'
 get '/api/feed/:offset' do
   deal = Deal.find(:all,
@@ -44,6 +47,36 @@ get '/api/feed/:offset' do
   :order => 'id DESC')
   deal.to_json
 end
+
+get '/api/feed/country/:id/:offset' do
+  deal = Deal.find(:all,
+  :limit => 10,
+  :conditions => ["country = ?", "#{params[:id]}"],
+  :offset => params[:offset].to_i||0,
+  :order => 'id DESC')
+  deal.to_json
+end
+
+
+get '/api/feed/catlog/:id/:offset' do
+  deal = Deal.find(:all, 
+  :limit => 10, 
+  :conditions => ["catlog = ?", "#{params[:id]}"], 
+  :offset => params[:offset].to_i||0,
+  :order => 'id DESC')
+  deal.to_json
+end
+
+get '/api/feed/mall/:id/:offset' do
+  deal = Deal.find(:all, 
+  :limit => 10, 
+  :conditions => ["blink like ?", "%#{params[:id]}%"], 
+  :offset => params[:offset].to_i||0,
+  :order => 'id DESC')
+  deal.to_json
+end
+
+################## 网站路由 ######################
 
 get '/' do
   @deal = Deal.find(:all, 
