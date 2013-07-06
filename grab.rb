@@ -20,17 +20,17 @@
   )
   
   # oauth2.0 基 础 配 置
-  Weibo2::Config.api_key = "3310821321"
-  Weibo2::Config.api_secret = "224cb265763ff6f65a3cb65f95f69fa3"
+  Weibo2::Config.api_key = "2879718887"
+  Weibo2::Config.api_secret = "687dcb176438571f9c0cabc61b914ad2"
   Weibo2::Config.redirect_uri = "http://xmzdm.com"
   
   # 得 到 acesstoken, 仅 需 运 一 次 ! 第 三 行 是 获 取 到 的 地 址
   #client = Weibo2::Client.new
   #puts client.auth_code.authorize_url(:response_type => "token")
- #https://api.weibo.com/oauth2/authorize?client_id=3310821321&response_type=token&redirect_uri=http%3A%2F%2Fxmzdm.com
+ #https://api.weibo.com/oauth2/authorize?client_id=2879718887&response_type=token&redirect_uri=http://184.82.79.30/callback
  
   # 用 获 取 到 的 accesstoken 组 装 请 求 方 法 , accesstoken需使用上面的地址每天换一次
-  client = Weibo2::Client.from_hash(:access_token => "2.00xudY2BtrrDcD8e5fc4cf7c9EmHSB", :expires_in => 86400)
+  client = Weibo2::Client.from_hash(:access_token => "2.00xudY2Bp7AtIDfb89a2306f0o2KP2", :expires_in => 86400)
   
   # 遍 历 要 抓 取 的 帐 号 ， 获 取 其 微 博 内 容
   @dealsite = DealSite.find(:all,
