@@ -27,6 +27,7 @@ configure do # 配置文件，服务启动时运行一次
   set :cache_enabled_for, :all
   set :cache_page_extension, '.html'
   set :cache_output_dir, 'cache' # 设置是必须的，否则报方法私有错误
+  use Rack::Deflater # 使用gzip
 end
 
 puts '加载帮助'
