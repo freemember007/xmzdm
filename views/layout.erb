@@ -16,7 +16,11 @@
 		<% else %>
 		<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
 		<link href="/css/style.css" rel="stylesheet" media="screen" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="/js/components/jquery-ias/dist/css/jquery.ias.css" />
 		<% end %>
+		<script src="/js/components/jquery/jquery.min.js"></script>
+		<script src="/js/components/jquery-ias/dist/jquery-ias.min.js"></script>
+		<script src="/js/main.js"></script>
 	</head>  
 
   <body>
@@ -65,9 +69,6 @@
 				</div>
 				<div id="sitelist">
 					按网站查看：
-					<a href="/site/coo8.com">库巴</a>&nbsp;&nbsp;
-					<a href="/site/ihush.com">俏物俏语</a>&nbsp;&nbsp;
-					<a href="/site/vancl">凡客诚品</a>&nbsp;&nbsp;						
 					<a href="/site/taobao.com">淘宝</a>&nbsp;&nbsp;
 					<a href="/site/tmall.com">天猫</a>&nbsp;&nbsp;
 					<a href="/site/360buy.com">京东</a>&nbsp;&nbsp;
@@ -78,7 +79,8 @@
 					<a href="/site/51buy.com">易迅</a>&nbsp;&nbsp;
 					<a href="/site/suning.com">苏宁</a>&nbsp;&nbsp;
 					<a href="/site/gome.com.cn">国美</a>&nbsp;&nbsp;
-					<a href="/site/vjia.com">V+</a>&nbsp;&nbsp;
+					<a href="/site/coo8.com">库巴</a>&nbsp;&nbsp;
+					<a href="/site/vancl">凡客诚品</a>&nbsp;&nbsp;
 				</div>
 			</div>	
 <!--内容区-->
@@ -142,15 +144,16 @@
 									<%="<img alt='#{deal.brand}#{deal.pname}#{deal.model}' src='#{deal.image_url||deal.image_url}'>" %>
 								</p>
 							<% end %>
-		<!--价格-->				
-							<p class="deal-price">
-								<% if deal.country == 2 %>
-									<% str = (deal.price.delete("$").to_i*6.3.round + 53 ).to_s %>
-									<span><%="抢购价:"+ deal.price + "(到手约" + str + "元)" %></span>
-								<% else %>
-									<span><%= "抢购价:"+ deal.price if deal.price != nil %></span>
-								<% end %>
-							</p>
+		<!--价格-->			<% if deal.price != nil	%>
+								<p class="deal-price">
+									<% if deal.country == 2 %>
+										<% str = (deal.price.delete("$").to_i*6.3.round + 53 ).to_s %>
+										<span>抢购价:&nbsp;<span class='redPrice'><%=deal.price + "(到手约" + str + "元)" %></span></span>
+									<% else %>
+										<span>抢购价:&nbsp;<span class='redPrice'><%= deal.price %></span></span>
+									<% end %>
+								</p>
+							<% end %>
 		<!--描述-->						
 							<% if params[:id] %>
 								<p class="deal-desc">
@@ -172,11 +175,7 @@
 				<% end %>
 <!--分页-->
 				<div id="page">
-					<a href= "/page/1">1</a>&nbsp;&nbsp;
-					<a href= "/page/2">2</a>&nbsp;&nbsp;
-					<a href= "/page/3">3</a>&nbsp;&nbsp;
-					<a href= "/page/4">4</a>&nbsp;&nbsp;
-					<a href= "/page/5">5</a>&nbsp;&nbsp;
+					<a href="<%=@next%>">下一页</a>
 				</div>
 <!--底部-->
 				<div id="copyright">

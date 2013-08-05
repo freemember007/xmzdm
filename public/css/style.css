@@ -38,7 +38,7 @@ img{border:0;}
 .deal-tag{display:auto;padding:5px 0 5px 0;color:#000000;}
 .deal-tag a{font-size:14px;font-weight:bold;}
 .deal-price{display:auto;font-size:14px;font-weight:bold;color:#000000;padding:5px 0 5px 0;}
-.deal-price span{color:#000000;}
+.redPrice {color: #C33B35; font-size: 18px}
 .deal-desc{color:#000000;line-height:20px;padding:5px 0 5px 0;}
 .deal-hit{padding:5px 0 5px 0;height:10px;}
 .bbuttonr{float:left;width:80px;height:22px;text-align:center;line-height:22px;font-weight:normal;font-size:12px;color:#ffffff;background-color:#BD362F;background-image:-moz-linear-gradient(center top , #EE5F5B, #BD362F);background-image:-webkit-linear-gradient(top, #EE5F5B, #BD362F);background-repeat:repeat-x;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);border-radius:4px;}
