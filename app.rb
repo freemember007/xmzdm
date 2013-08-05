@@ -103,7 +103,6 @@ get '/detail/:id' do
   @deal = Deal.find(:all, 
   :conditions => ["id = ?", "#{params[:id]}"])
   @title = @deal[0].title.gsub(reg, '')
-  @next = request.path.gsub(/\/(\d+)?$/, '') + '/' + ((params[:page]||'1').to_i + 1).to_s
   erb :detail
 end
 

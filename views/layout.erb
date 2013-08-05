@@ -174,9 +174,11 @@
 					</div>
 				<% end %>
 <!--分页-->
-				<div id="page">
-					<a href="<%=@next%>">下一页</a>
-				</div>
+				<% unless params[:id]%>
+					<div id="page">
+						<a href="<%=@next%>">下一页</a>
+					</div>
+				<% end %>
 <!--底部-->
 				<div id="copyright">
 					CopyRight 2012&nbsp;&nbsp;<a href="http://weibo.com/freemember007" target="_blank">虾米值得买</a>
