@@ -36,7 +36,7 @@ img{border:0;}
 .deal-title-detail{color:#000000;font-size:20px;line-height:24px;font-weight:bold;padding:5px 0 15px 0;text-align:left;}
 .deal-title a{color:#003399;}
 .deal-tag{display:auto;padding:5px 0 5px 0;color:#000000;}
-.deal-tag a{font-size:14px;font-weight:normal;}
+.deal-tag a{font-size:14px;font-weight:bold;}
 .deal-price{display:auto;font-size:14px;font-weight:bold;color:#000000;padding:5px 0 5px 0;}
 .deal-price span{color:#000000;}
 .deal-desc{color:#000000;line-height:20px;padding:5px 0 5px 0;}

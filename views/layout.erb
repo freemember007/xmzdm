@@ -3,8 +3,12 @@
 
   <head>  
     <title><%= @title %>-虾米值得买-什么值得买-买个便宜货-美国便宜货</title>
-		<meta name="keywords" content="值得买, 限时抢购, 促销活动, 海淘, 优惠券, 超值，优惠"/>
-		<meta name="description" content="虾米值得买 xmzdm.com 什么值得买 买个便宜货 美国便宜货"/>
+		<meta name="keywords" content="值得买, 限时抢购, 促销活动, 海淘, 优惠券, 超值, 优惠, 虾米值得买 ,什么值得买, 买个便宜货, 美国便宜货"/>
+		<% if params[:id]%>
+		<meta name="description" content="<%= @deal[0].description %>"/>
+		<% else %>
+		<meta name="description" content="值得买, 限时抢购, 促销活动, 海淘, 优惠券, 超值, 优惠, 虾米值得买 ,什么值得买, 买个便宜货, 美国便宜货"/>
+		<% end %>
 		<% client_browser = request.env["HTTP_USER_AGENT"] %>
 		<% if client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
 		<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
@@ -90,7 +94,7 @@
 						<% unless params[:id] or client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
 						<div class="item-left">	
 							<div class="deal-img">
-									<%="<a href='/detail/#{deal.id}' target='_blank'><img src='#{deal.image_url}'></a>" %>
+									<%="<a href='/detail/#{deal.id}' target='_blank'><img alt='#{deal.brand}#{deal.pname}#{deal.model}' src='#{deal.image_url}'></a>" %>
 							</div>
 						</div>
 						<% end %>
@@ -130,28 +134,28 @@
 							</div>
 		<!--正文图片-->					
 							<% if params[:id] %>
-								<div class="deal-img-detail">
-									<%="<img src='#{deal.mimage_url||deal.image_url}'>" %>
-								</div>
+								<p class="deal-img-detail">
+									<%="<img  alt='#{deal.brand}#{deal.pname}#{deal.model}' src='#{deal.mimage_url||deal.image_url}'>" %>
+								</p>
 							<% elsif client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
-								<div class="deal-img">
-									<%="<img src='#{deal.image_url||deal.image_url}'>" %>
-								</div>
+								<p class="deal-img">
+									<%="<img alt='#{deal.brand}#{deal.pname}#{deal.model}' src='#{deal.image_url||deal.image_url}'>" %>
+								</p>
 							<% end %>
 		<!--价格-->				
-							<div class="deal-price">
+							<p class="deal-price">
 								<% if deal.country == 2 %>
 									<% str = (deal.price.delete("$").to_i*6.3.round + 53 ).to_s %>
 									<span><%="抢购价:"+ deal.price + "(到手约" + str + "元)" %></span>
 								<% else %>
 									<span><%= "抢购价:"+ deal.price if deal.price != nil %></span>
 								<% end %>
-							</div>
+							</p>
 		<!--描述-->						
 							<% if params[:id] %>
-								<div class="deal-desc">
+								<p class="deal-desc">
 									<%= deal.description %>
-								</div>
+								</p>
 							<% end %>
 		<!--点击购买与分享-->					
 							<div class="deal-hit">
