@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
   <head>  
-    <title><%= @title %>-虾米值得买-精品网购新鲜报</title>
-		<meta name="keywords" content="折扣, 降价, 促销, 海淘, 优惠券, 超值，优惠"/>
-		<meta name="description" content="虾米值得买 xmzdm.com 精品网购新鲜报"/>
+    <title><%= @title %>-虾米值得买-什么值得买-买个便宜货-美国便宜货</title>
+		<meta name="keywords" content="值得买, 限时抢购, 促销活动, 海淘, 优惠券, 超值，优惠"/>
+		<meta name="description" content="虾米值得买 xmzdm.com 什么值得买 买个便宜货 美国便宜货"/>
 		<% client_browser = request.env["HTTP_USER_AGENT"] %>
 		<% if client_browser =~ /iPhone|Android|blackberry|palm|Webkit/ %>
 		<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
@@ -19,7 +19,7 @@
 
 		<div id="main">
 <!--头部-->			
-	    <div id="top">
+		    <div id="top">
 				<div id="logo">
 					<a href="/" onfocus=this.blur();>
 						<div id="logo-img">
@@ -102,8 +102,8 @@
 						<% end %>	
 		<!--标题-->				
 							<% if params[:id]%>
-								<div class="deal-title-detail"><%= deal.title.gsub(reg, '') %>
-								</div>
+								<h1 class="deal-title-detail"><%= deal.title.gsub(reg, '') %>
+								</h1>
 							<% else %>
 								<a href="/detail/<%= deal.id %>" target="_blank" style="text-decoration:none">
 									<div class="deal-title">
@@ -176,7 +176,7 @@
 				</div>
 <!--底部-->
 				<div id="copyright">
-					CopyRight 2012&nbsp;&nbsp;<a href="http://weibo.com/freemember007" target="_blank">虾米值得买</a>&nbsp;<a href="http://www.kuaidi100.com/all/sf.shtml" target="_blank">顺丰快递查询</a>
+					CopyRight 2012&nbsp;&nbsp;<a href="http://weibo.com/freemember007" target="_blank">虾米值得买</a>
 				</div>
 
 <!--结束内容区-->			
@@ -188,6 +188,7 @@
 <!--结束main-->
 		</div>	
 	</body>
+	<!--
 	<script type="text/javascript">
 		 document.write('<a style="display:none!important" id="tanx-a-mm_25223972_4158409_13490530"></a>');
 		 tanx_s = document.createElement("script");
@@ -199,5 +200,5 @@
 		 tanx_h = document.getElementsByTagName("head")[0];
 		 if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
 	</script>
-
+	-->
 </html>
