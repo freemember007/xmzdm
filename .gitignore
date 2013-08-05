@@ -1,7 +1,6 @@
 .DS_Store
 
 cache/
-components/
 
 cronlog
 *.sqlite
