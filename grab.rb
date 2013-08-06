@@ -49,7 +49,7 @@
     rescue Exception => ex
       puts ex.message
       attempts = attempts + 1
-      sleep(3)
+      #sleep(3)
       puts ">>第#{attempts}次重试(获取微博内容)..."
       retry if(attempts < 5)
     end  
@@ -168,7 +168,7 @@
             puts ex.message
             attempts = attempts + 1
             puts "OMG，没成功，先休息2秒再重试..."
-            sleep(2)
+            #sleep(2)
             puts ">>第#{attempts}次重试（解析商品网址）..."
             retry if(attempts < 3)
           end
@@ -217,7 +217,7 @@
           
           else
             puts ">>>该文系抄袭《#{deal[0].deal_site.name}》！#{deal[0].time}\n #{deal[0].title}  "
-            sleep(3)
+            #sleep(3)
           end # 结 束 是 否 抄 袭 分 析
           
         end # 结 束 title 规 则 分 析
