@@ -71,7 +71,7 @@
       puts " 来自《#{dealsite.name}》"
       puts title
       puts "等待3秒，判断title是否符合规则..."
-      sleep(3)
+      #sleep(3)
         # 判断title是否符合规则
         if title =~ /\d元|\d美刀|\d刀|\d美元|价格\d|购价\d|价为\d|\d折|满\d+减n\d+|\d折|活动时间|立减\d|限时抢|手慢无|\d包邮|￥\d|\$\d/ and title =~ /(http:\/\/t\.cn\/[a-z0-9A-Z]*)/
           link = title.match(/http:\/\/t\.cn\/[a-z0-9A-Z]*/).to_s

@@ -112,7 +112,7 @@
 								</h1>
 							<% else %>
 								<a href="/detail/<%= deal.id %>" target="_blank" style="text-decoration:none">
-									<div class="deal-title">
+									<h2 class="deal-title">
 										<img class="favicon"
 										<% if deal.blink=~ /51buy\.com/ %>
 										src="http://www.51buy.com/favicon.ico"
@@ -123,7 +123,7 @@
 										<% end %>
 										 max-height="16px" max-width="16px">&nbsp;
 										<%= deal.title.gsub(reg, '') %>
-									</div>
+									</h2>
 								</a>
 							<% end %>
 		<!--标签-->					

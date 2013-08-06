@@ -32,7 +32,7 @@ img{border:0;}
 .item-right{float:right;width:710px;}
 .item-right-detail{width:100%;text-align:left;}
 .favicon{height:16px;}
-.deal-title{color:#003399;font-size:16px;line-height:24px;font-weight:bold;padding:5px 0 5px 0;}
+.deal-title{color:#003399;font-size:16px;line-height:24px;font-weight:bold; margin: 0 auto}
 .deal-title-detail{color:#000000;font-size:20px;line-height:24px;font-weight:bold;padding:5px 0 15px 0;text-align:left;}
 .deal-title a{color:#003399;}
 .deal-tag{display:auto;padding:5px 0 5px 0;color:#000000;}

@@ -125,7 +125,7 @@ get '/brand/:name/?:page?' do
   :limit => 20, 
   :offset => params[:page].to_i*20,
   :order => 'id DESC')
-  @title = params[:name]
+  @title = params[:name] + '品牌怎么样'
   @next = request.path.gsub(/\/(\d+)?$/, '') + '/' + ((params[:page]||'1').to_i + 1).to_s
   erb :brand
   #cache( erb( :brand ))
@@ -137,7 +137,7 @@ get '/pname/:name/?:page?' do
   :limit => 20, 
   :offset => params[:page].to_i*20,
   :order => 'id DESC')
-  @title = params[:name]
+  @title = '什么牌子的' + params[:name] + '最好'
   @next = request.path.gsub(/\/(\d+)?$/, '') + '/' + ((params[:page]||'1').to_i + 1).to_s
   erb :pname
   #cache( erb( :pname ))
