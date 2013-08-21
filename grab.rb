@@ -198,8 +198,12 @@
                 puts ">>得到真实购买链接为：#{blink}"
                 
                 # 从淘宝、京东、一起发等广告联盟地址获取真实地址并转码（正常URL不影响，神奇的代码！！！）
-                @deal.blink = URI.decode(URI.decode(blink).gsub(/(http.*=)?(http.*)/,'\2'))
-                break
+                if blink =~ /s\.click\.taobao\.com/
+                  break
+                else
+                  @deal.blink = URI.decode(URI.decode(blink).gsub(/(http.*=)?(http.*)/,'\2'))
+                  break
+                end
               end
             end
             doc.css("#single p, #topic p, #article p, #main p, #content p, .content p, #context p, .context p, #post p, #postlist p, #postlist font, .post p, #article_content p, #article_content font, .article_content p, #ct p, .discount-detail p, .main p").each do |p|
